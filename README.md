@@ -97,6 +97,6 @@ Complete your initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, an
 
 * Created a template HTML file called `index.html` that takes the Mars data dictionary and display all the data in the appropriate HTML elements.
 
-![images/final_app.png](images/final_app.png)
+![images/final_app.PNG](images/final_app.PNG)
 
 - - -
