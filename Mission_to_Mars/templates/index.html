@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div class="jumbotron text-center border-bottom">
+    <h1>Mission to Mars</h1>
+    <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2><u>Latest Mars News</u></h2>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="col-md-12" id="scraped-data">
+    <h4>{{collection.news_title}}</h4>
+    <p>{{collection.news_date}}</p>
+    <p>{{collection.news_p}}</p>
+  </div>
+</div>
+
+<hr>
+  <div class="row no-gutter img-table">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body" id="img-table">
+          <h2 class="card-title"><u>Featured Mars Image</u></h2>
+          <p class="card-text" id="dark-font">{{ collection.featured_image_title }}</p>
+          <img class="card-img-bottom" src="{{ collection.featured_image_url }}" alt="Featured Mars Image">
+          <a href="https://spaceimages-mars.com/" target="_blank"></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body" id="img-table">
+          <div class="col-md-12 mt-4">
+            <h2 class="card-title"><u>Mars Facts</u></h2>
+            <p class="card-text" id="dark-font">{{ collection.mars_facts | safe }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+<hr>
+  <div class="row" id="mars-hemispheres">
+    <div class="col-md-12">
+      <h3 class="text-center">Mars Hemispheres</h3>
+    </div>
+
+    {% for hemisphere in collection.mars_hemi %}
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <img src="{{hemisphere.img_url | default('static/images/error/png', true)}}" alt="...">
+        <div class="caption">
+          <h3>{{hemisphere.title}}</h3>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+
+</body>
+
+</html>
