@@ -1,4 +1,4 @@
-# Unit 12 Homework: Mission to Mars
+# Web Scraping Challenge
 
 In this assignment, you will build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page. The following information outlines what you need to do.
 
@@ -97,6 +97,6 @@ Complete your initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, an
 
 * Created a template HTML file called `index.html` that takes the Mars data dictionary and display all the data in the appropriate HTML elements.
 
-![final_app_part1.png](images/final_app.png)
+![images/final_app.png](images/final_app.png)
 
 - - -
